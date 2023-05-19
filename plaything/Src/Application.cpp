@@ -1,10 +1,38 @@
 #include "Application.hpp"
 
-#include <iostream>
+Application::Application()
+	: m_Window(nullptr)
+	, m_Title("plaything")
+	
+	, m_Width(1280)
+	, m_Height(720)
+	
+	, m_Renderer(nullptr)
+
+	, m_Running(true)
+{
+
+}
 
 int Application::OnExecute()
 {
-	std::cout << "Hello World!" << std::endl;
+	if (!OnInit())
+		return -1;
+	
+	SDL_Event Event{};
+
+	while (m_Running)
+	{
+		while (SDL_PollEvent(&Event))
+		{
+			OnEvent(&Event);
+		}
+
+		OnLoop();
+		OnRender();
+	}
+
+	OnCleanup();
 
 	return 0;
 }

@@ -95,6 +95,11 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Src\Application.cpp" />
+    <ClCompile Include="Src\Application_OnCleanup.cpp" />
+    <ClCompile Include="Src\Application_OnEvent.cpp" />
+    <ClCompile Include="Src\Application_OnInit.cpp" />
+    <ClCompile Include="Src\Application_OnLoop.cpp" />
+    <ClCompile Include="Src\Application_OnRender.cpp" />
     <ClCompile Include="Src\main.cpp" />
   </ItemGroup>
   <ItemGroup>
