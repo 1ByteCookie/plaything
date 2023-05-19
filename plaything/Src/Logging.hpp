@@ -1,11 +1,5 @@
 #pragma once
 
-namespace Utils
-{
-	void PrintErrorSDL();
-}
-
-
 #ifdef _DEBUG
 	#define DebugLog() Utils::PrintErrorSDL();
 
@@ -13,3 +7,9 @@ namespace Utils
 #define DebugLog()
 
 #endif
+
+
+namespace Utils
+{
+	void PrintErrorSDL();
+}
