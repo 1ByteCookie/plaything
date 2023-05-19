@@ -1,6 +1,6 @@
 #include "Application.hpp"
 
-#include <iostream>
+#include "Logging.hpp"
 
 bool Application::OnInit()
 {
@@ -13,8 +13,7 @@ bool Application::OnInit()
 
 	if (!m_Window)
 	{
-		std::string Message{SDL_GetError()};
-		std::cout << Message << std::endl;
+		DebugLog();
 
 		return false;
 	}
