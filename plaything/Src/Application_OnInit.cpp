@@ -14,7 +14,14 @@ bool Application::OnInit()
 	if (!m_Window)
 	{
 		DebugLog();
+		return false;
+	}
 
+	m_Renderer = SDL_CreateRenderer(m_Window, -1, SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC);
+
+	if (!m_Renderer)
+	{
+		DebugLog();
 		return false;
 	}
 

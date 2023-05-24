@@ -38,6 +38,7 @@ private:
 
 	SDL_Renderer*	m_Renderer;
 
+	SDL_FRect		m_Quad;
 
 	bool			m_Running;
 

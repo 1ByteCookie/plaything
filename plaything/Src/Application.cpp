@@ -9,6 +9,8 @@ Application::Application()
 	
 	, m_Renderer(nullptr)
 
+	, m_Quad(SDL_FRect(10, 10, 100, 100))
+
 	, m_Running(true)
 {
 
