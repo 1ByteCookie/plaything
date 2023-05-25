@@ -102,6 +102,7 @@
     <ClCompile Include="Src\Application_OnRender.cpp" />
     <ClCompile Include="Src\Logging.cpp" />
     <ClCompile Include="Src\main.cpp" />
+    <ClCompile Include="Src\Vector2.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Scripts\build.py" />
@@ -109,6 +110,7 @@
   <ItemGroup>
     <ClInclude Include="Src\Application.hpp" />
     <ClInclude Include="Src\Logging.hpp" />
+    <ClInclude Include="Src\Vector2.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
