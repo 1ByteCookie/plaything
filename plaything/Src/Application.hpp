@@ -27,6 +27,11 @@ private:
 
 private:
 
+	void InitScene();
+
+
+private:
+
 	SDL_Window*		m_Window;
 	SDL_Renderer*	m_Renderer;
 	entt::registry	m_Scene;

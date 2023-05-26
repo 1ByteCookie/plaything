@@ -27,8 +27,14 @@ bool Application::OnInit()
 		return false;
 	}
 
-	entt::entity Quad = m_Scene.create();
-	m_Scene.emplace<QuadComponent>(Quad, 10, 10, 60, 60);
+
+	InitScene();
 
 	return true;
+}
+
+void Application::InitScene()
+{
+	entt::entity Player = m_Scene.create();
+	m_Scene.emplace<QuadComponent>(Player, 10, 10, 60, 60);
 }
