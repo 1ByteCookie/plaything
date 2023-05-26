@@ -3,6 +3,7 @@
 #include "Logging.hpp"
 
 #include "Components/QuadComponent.hpp"
+#include "Components/Tags.hpp"
 
 bool Application::OnInit()
 {
@@ -28,13 +29,19 @@ bool Application::OnInit()
 	}
 
 
-	InitScene();
+	InitResource();
 
 	return true;
 }
 
-void Application::InitScene()
+void Application::InitResource()
 {
 	entt::entity Player = m_Scene.create();
-	m_Scene.emplace<QuadComponent>(Player, 10, 10, 60, 60);
+	m_Scene.emplace<Tags::Player>(Player);
+	m_Scene.emplace<QuadComponent>(Player, 10, 10, TileW, TileH);
+
+
+	entt::entity Mob = m_Scene.create();
+	m_Scene.emplace<Tags::Enemy>(Mob);
+	m_Scene.emplace<QuadComponent>(Mob, 900, 500, TileW, TileH);
 }

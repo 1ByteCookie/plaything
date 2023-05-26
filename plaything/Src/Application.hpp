@@ -5,6 +5,9 @@
 
 #include <string>
 
+constexpr uint32_t TileW = 60;
+constexpr uint32_t TileH = 60;
+
 class Application
 {
 
@@ -27,7 +30,7 @@ private:
 
 private:
 
-	void InitScene();
+	void InitResource();
 
 
 private:
