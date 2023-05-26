@@ -1,6 +1,7 @@
 #pragma once
 
-#include "SDL2/SDL.h"
+#include <SDL2/SDL.h>
+#include <entt/entt.hpp>
 
 #include <string>
 
@@ -15,30 +16,24 @@ public:
 	int OnExecute();
 
 
-public:
+private:
 
 	bool OnInit();
-	
 	void OnEvent(SDL_Event* Event);
-	
 	void OnLoop();
-	
 	void OnRender();
-	
 	void OnCleanup();
 
 
 private:
 
 	SDL_Window*		m_Window;
+	SDL_Renderer*	m_Renderer;
+	entt::registry	m_Scene;
+
 	std::string		m_Title;
-	
 	uint32_t		m_Width;
 	uint32_t		m_Height;
-
-	SDL_Renderer*	m_Renderer;
-
-	SDL_FRect		m_Quad;
 
 	bool			m_Running;
 

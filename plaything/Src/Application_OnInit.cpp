@@ -2,6 +2,8 @@
 
 #include "Logging.hpp"
 
+#include "Components/QuadComponent.hpp"
+
 bool Application::OnInit()
 {
 	m_Window = SDL_CreateWindow(m_Title.c_str(),
@@ -24,6 +26,9 @@ bool Application::OnInit()
 		DebugLog();
 		return false;
 	}
+
+	entt::entity Quad = m_Scene.create();
+	m_Scene.emplace<QuadComponent>(Quad, 10, 10, 60, 60);
 
 	return true;
 }
