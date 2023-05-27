@@ -1,5 +1,10 @@
 #include "Application.hpp"
 
+#include "Components/QuadComponent.hpp"
+#include "Components/Tags.hpp"
+
+#include "Vector2.hpp"
+
 #include <iostream>
 
 void Application::OnEvent(SDL_Event* Event)
@@ -21,26 +26,36 @@ void Application::HandlePlayerInput(SDL_Event* Event)
 	{
 		case SDL_SCANCODE_W:
 		{
-			std::cout << "W key has been pressed!" << std::endl;
+			PlayerMovement(Vector2{ 0, -1 });
 			break;
 		}
 
 		case SDL_SCANCODE_A:
 		{
-			std::cout << "A key has been pressed!" << std::endl;
+			PlayerMovement(Vector2{ -1, 0 });
 			break;
 		}
 
 		case SDL_SCANCODE_S:
 		{
-			std::cout << "S key has been pressed!" << std::endl;
+			PlayerMovement(Vector2{ 0, 1 });
 			break;
 		}
 
 		case SDL_SCANCODE_D:
 		{
-			std::cout << "D key has been pressed!" << std::endl;
+			PlayerMovement(Vector2{ 1, 0 });
 			break;
 		}
 	}
+}
+
+void Application::PlayerMovement(Vector2 Direction)
+{
+	auto Player	= m_Scene.view<QuadComponent, Tags::Player>().front();
+
+	auto& PlayerTransform = m_Scene.get<QuadComponent>(Player);
+
+	PlayerTransform.m_Quad.x += Direction.x;
+	PlayerTransform.m_Quad.y += Direction.y;
 }

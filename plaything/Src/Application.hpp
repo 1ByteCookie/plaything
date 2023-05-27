@@ -32,6 +32,7 @@ private:
 
 	void InitResource();
 	void HandlePlayerInput(SDL_Event* Event);
+	void PlayerMovement(class Vector2 Direction);
 
 
 private:
