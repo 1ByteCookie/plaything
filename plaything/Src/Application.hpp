@@ -5,8 +5,8 @@
 
 #include <string>
 
-constexpr uint32_t TileW = 60;
-constexpr uint32_t TileH = 60;
+constexpr uint32_t TileW = 100;
+constexpr uint32_t TileH = 100;
 
 class Application
 {
