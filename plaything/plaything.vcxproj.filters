@@ -62,5 +62,8 @@
     <ClInclude Include="Src\Components\Tags.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Src\Components\SpeedComponent.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

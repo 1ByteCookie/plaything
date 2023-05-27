@@ -1,6 +1,7 @@
 #include "Application.hpp"
 
 #include "Components/QuadComponent.hpp"
+#include "Components/SpeedComponent.hpp"
 #include "Components/Tags.hpp"
 
 #include "Vector2.hpp"
@@ -55,7 +56,8 @@ void Application::PlayerMovement(Vector2 Direction)
 	auto Player	= m_Scene.view<QuadComponent, Tags::Player>().front();
 
 	auto& PlayerTransform = m_Scene.get<QuadComponent>(Player);
+	float PlayerSpeed = m_Scene.get<SpeedComponent>(Player).Speed;
 
-	PlayerTransform.m_Quad.x += Direction.x;
-	PlayerTransform.m_Quad.y += Direction.y;
+	PlayerTransform.m_Quad.x += Direction.x * PlayerSpeed;
+	PlayerTransform.m_Quad.y += Direction.y * PlayerSpeed;
 }
