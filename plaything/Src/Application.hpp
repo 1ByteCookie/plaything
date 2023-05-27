@@ -31,6 +31,7 @@ private:
 private:
 
 	void InitResource();
+	void HandlePlayerInput(SDL_Event* Event);
 
 
 private:
