@@ -9,17 +9,7 @@ void Application::OnRender()
 	SDL_RenderClear(m_Renderer);
 
 
-	auto PlayerView = m_Scene.view<QuadComponent, Tags::Player>();
-	for(auto Entity : PlayerView)
-	{
-		auto& Quad = m_Scene.get<QuadComponent>(Entity);
-
-		SDL_SetRenderDrawColor(m_Renderer, 0, 255, 255, 255);
-		SDL_RenderFillRectF(m_Renderer, Quad);
-		SDL_RenderDrawRectF(m_Renderer, Quad);
-
-	}
-
+	// draw enemy
 	auto EnemyView = m_Scene.view<QuadComponent, Tags::Enemy>();
 	for (auto Entity : EnemyView)
 	{
@@ -30,6 +20,20 @@ void Application::OnRender()
 		SDL_RenderDrawRectF(m_Renderer, Quad);
 
 	}
+
+
+	// draw player
+	auto PlayerView = m_Scene.view<QuadComponent, Tags::Player>();
+	for (auto Entity : PlayerView)
+	{
+		auto& Quad = m_Scene.get<QuadComponent>(Entity);
+
+		SDL_SetRenderDrawColor(m_Renderer, 0, 255, 255, 255);
+		SDL_RenderFillRectF(m_Renderer, Quad);
+		SDL_RenderDrawRectF(m_Renderer, Quad);
+
+	}
+
 
 	SDL_RenderPresent(m_Renderer);
 }
