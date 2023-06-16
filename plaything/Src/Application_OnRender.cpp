@@ -5,7 +5,7 @@
 
 void Application::OnRender()
 {
-	SDL_SetRenderDrawColor(m_Renderer, 155, 0, 255, 255);
+	SDL_SetRenderDrawColor(m_Renderer, 0, 0, 0, 255);
 	SDL_RenderClear(m_Renderer);
 
 

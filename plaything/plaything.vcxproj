@@ -109,6 +109,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Src\Application.hpp" />
+    <ClInclude Include="Src\Components\QuadColliderComponent.hpp" />
     <ClInclude Include="Src\Components\QuadComponent.hpp" />
     <ClInclude Include="Src\Components\SpeedComponent.hpp" />
     <ClInclude Include="Src\Components\Tags.hpp" />

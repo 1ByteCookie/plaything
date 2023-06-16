@@ -3,6 +3,7 @@
 #include "Logging.hpp"
 
 #include "Components/QuadComponent.hpp"
+#include "Components/QuadColliderComponent.hpp"
 #include "Components/SpeedComponent.hpp"
 #include "Components/Tags.hpp"
 
@@ -40,9 +41,11 @@ void Application::InitResource()
 	entt::entity Player = m_Scene.create();
 	m_Scene.emplace<Tags::Player>(Player);
 	m_Scene.emplace<QuadComponent>(Player, 10, 10, TileW, TileH);
+	m_Scene.emplace<QuadColliderComponent>(Player, 10, 10, TileW, TileH);
 	m_Scene.emplace<SpeedComponent>(Player, 10.0f);
 
 	entt::entity Mob = m_Scene.create();
 	m_Scene.emplace<Tags::Enemy>(Mob);
 	m_Scene.emplace<QuadComponent>(Mob, 900, 500, TileW, TileH);
+	m_Scene.emplace<QuadColliderComponent>(Mob, 900, 500, TileW, TileH);
 }
